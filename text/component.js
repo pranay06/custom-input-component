@@ -14,7 +14,7 @@ function TextBoxCtrl()
 {
     console.log("Inside controller of textBoxCtrl");
     console.log(this);
-    this.reflect = function(value) {
+    this.reflectValue = function(value) {
       console.log(value);
       this.reflectComponent({value:value});
     };
