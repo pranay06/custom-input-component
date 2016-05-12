@@ -2,6 +2,8 @@ customInputComponentApp.
   component('textBox',{
     templateUrl: './text/nativeContent.html',
     controller: TextBoxCtrl,
+    controllerAs: "TextBoxCtrl"
+    ,
     bindings: {
       label: '@',
       specificAttr: '<',

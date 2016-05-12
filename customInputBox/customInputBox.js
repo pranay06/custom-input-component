@@ -9,7 +9,8 @@ customInputComponentApp.
       reflectCustomInput: '&'
     },
     templateUrl: './customInputBox/customInputBox.html',
-    controller: CustomInputBoxCtrl
+    controller: CustomInputBoxCtrl,
+    controllerAs: "CustomInputBoxCtrl"
   });
 
 function CustomInputBoxCtrl($scope) {
@@ -17,7 +18,7 @@ function CustomInputBoxCtrl($scope) {
   ctrl.a = 0;
   console.log("Inside CustomInputBoxCtrl");
   console.log($scope);
-  console.log($scope.$parent.$ctrl.label);
+  // console.log($scope.$parent.$ctrl.label);
   // $scope.$parent.$ctrl.label = "Some HAHAH Label";
   // console.log($scope.$parent.$ctrl.label);
   // ctrl.reflectCustomBox = ctrl.reflectCustomInput;
