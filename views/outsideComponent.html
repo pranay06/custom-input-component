@@ -1,8 +1,22 @@
 Outside componentsasdad
 <br>
-{{$ctrl.inputData}}
-<input type="text" ng-model="$ctrl.inputData">
+{{$ctrl.selectedData}}
+<br>
+<input type="text" ng-model="$ctrl.selectedData">
 
-
-<custom-input-box reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.inputData" type='$ctrl.type' label="$ctrl.label" specific-attr='$ctrl.specificAttr'>
+<div layout="row" layout-wrap >
+<custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type' label="$ctrl.label" specific-attr='$ctrl.specificAttr'>
 </custom-input-box>
+
+<custom-input-box flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type1' label="$ctrl.label1" specific-attr='$ctrl.specificAttr'>
+</custom-input-box>
+
+<custom-input-box flex="20" flex-offset="5"  reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type2' label="$ctrl.label2" specific-attr='$ctrl.specificAttr'>
+</custom-input-box>
+
+<custom-input-box flex="20" flex-offset="5"  reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type2' label="$ctrl.label2" specific-attr='$ctrl.specificAttr'>
+</custom-input-box>
+<custom-input-box flex="20" flex-offset="5"  reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type2' label="$ctrl.label2" specific-attr='$ctrl.specificAttr'>
+</custom-input-box>
+
+</div>

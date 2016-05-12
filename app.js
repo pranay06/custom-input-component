@@ -1,1 +1,1 @@
-var customInputComponentApp = angular.module('customInputComponent',[]);
+var customInputComponentApp = angular.module('customInputComponent',["ngMaterial","mdPickers"]);
