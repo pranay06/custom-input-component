@@ -23,7 +23,9 @@ function OutsideComponentCtrl($scope) {
   };
 
   // ctrl.selectedData = "";
-  ctrl.reflectFirstNameValue = function(value) {
-    ctrl.firstName = value;
+  ctrl.reflectValue = function(keyString,value) {
+    ctrl[keyString] = value;
+    console.log(keyString);
   };
+
 }

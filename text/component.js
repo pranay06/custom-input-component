@@ -3,7 +3,7 @@ customInputComponentApp.
     templateUrl: './text/nativeContent.html',
     controller: TextBoxCtrl,
     bindings: {
-      label: "<",
+      label: '@',
       specificAttr: '<',
       bindData: '<',
       reflectComponent: '&'
@@ -12,10 +12,12 @@ customInputComponentApp.
 
 function TextBoxCtrl()
 {
+    var ctrl = this;
     console.log("Inside controller of textBoxCtrl");
     console.log(this);
     this.reflectValue = function(value) {
       console.log(value);
       this.reflectComponent({value:value});
+
     };
 }

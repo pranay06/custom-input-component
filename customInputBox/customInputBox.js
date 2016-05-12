@@ -1,10 +1,11 @@
 customInputComponentApp.
   component('customInputBox', {
     bindings: {
-      type: "@",
-      label: "<",
+      type: '@',
+      label: '@',
       specificAttr: '<',
       bindData: '<',
+      bindDataKey:'@',
       reflectCustomInput: '&'
     },
     templateUrl: './customInputBox/customInputBox.html',
@@ -21,7 +22,9 @@ function CustomInputBoxCtrl($scope) {
   // console.log($scope.$parent.$ctrl.label);
   // ctrl.reflectCustomBox = ctrl.reflectCustomInput;
   ctrl.reflectCustomBox = function(newValue) {
+    console.log("In reflect Custom Box");
     console.log(newValue);
-    ctrl.reflectCustomInput({value:newValue});
+    ctrl.reflectCustomInput({'keyString':ctrl.bindDataKey,'value':newValue});
+    console.log(ctrl.bindDataKey);
   }
 }
