@@ -9,6 +9,12 @@ Outside components
   </custom-input-box>
 
 
+  <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.checkinTime" bind-data-key="checkinTime" type='timePicker' label="{{$ctrl.datelabel}}">
+  </custom-input-box>
+
+  <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.checkinDate" bind-data-key="checkinDate" type='datePicker' label="{{$ctrl.datelabel}}">
+  </custom-input-box>
+
   <!--
   <custom-input-box flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type1' label="$ctrl.label1" specific-attr='$ctrl.specificAttr'>
   </custom-input-box>

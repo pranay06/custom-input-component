@@ -1,1 +1,5 @@
-var customInputComponentApp = angular.module('customInputComponent',["ngMaterial","mdPickers"]);
+var customInputComponentApp = angular.module('customInputComponent',["ngMaterial",
+    "ngAnimate",
+    "ngAria",
+    "ngMessages",
+    "mdPickers"]);

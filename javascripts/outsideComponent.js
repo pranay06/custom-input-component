@@ -22,6 +22,11 @@ function OutsideComponentCtrl($scope) {
     "fellan":"dhamkaan"
   };
 
+  //DatePicker Model
+
+  ctrl.datelabel = "Checkin Date";
+  
+
   // ctrl.selectedData = "";
   ctrl.reflectValue = function(keyString,value) {
     ctrl[keyString] = value;
