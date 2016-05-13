@@ -1,0 +1,29 @@
+
+    <div ng-if="$ctrl.listDataType =='element' ">
+		<md-input-container>
+		    <label>{{$ctrl.label}}</label>
+		   	<md-select ng-model="$ctrl.bindData" ng-change="$ctrl.reflectValue($ctrl.bindData)" multiple>
+		     
+		       <md-option ng-value="option" ng-repeat="option in $ctrl.specificAttr.domainList">{{option}}</md-option>
+		     
+		    </md-select>
+		</md-input-container>
+    </div>
+
+    <div ng-if="$ctrl.listDataType =='object' ">
+     {{unique}} unique<br>
+     
+		<md-input-container>
+		    <label>{{$ctrl.label}}</label>
+		   		UNIQ:::{{unique[0] | json}}
+		   		list label key::{{$ctrl.specificAttr.listLabelKey}}
+		    	<md-select ng-model="$ctrl.bindData" ng-change="$ctrl.reflectValue($ctrl.bindData)" multiple>
+		   		    	<md-optgroup ng-repeat="uniq in $ctrl.unique" label={{uniq}}>
+		   		     		<md-option ng-value="option" ng-repeat="option in $ctrl.specificAttr.domainList | filter:{category:uniq}">{{option.name}}</md-option>
+		   		     	</md-optgroup>
+		   		    </md-select> 
+		</md-input-container>
+	</div>
+
+	
+

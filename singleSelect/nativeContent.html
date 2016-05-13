@@ -1,0 +1,20 @@
+<md-input-container>
+      <label>{{$ctrl.label}}</label>
+
+       
+      <md-select ng-model="$ctrl.bindData" ng-change="$ctrl.reflectValue($ctrl.bindData)">
+        <div ng-if="$ctrl.listDataType =='object' ">
+          <md-option  ng-repeat="item in $ctrl.specificAttr.domainList" value="{{item[$ctrl.specificAttr.listValueKey]}}">
+                {{item[$ctrl.specificAttr.listLabelKey]}}
+          </md-option>
+        </div>
+        <div ng-if="$ctrl.listDataType =='element' ">
+
+          <md-option  ng-repeat="item in $ctrl.specificAttr.domainList" value="{{item}}">
+                {{item}}
+          </md-option>
+        </div>
+
+        </div>
+      </md-select>
+  </md-input-container>

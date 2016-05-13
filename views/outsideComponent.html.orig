@@ -1,11 +1,4 @@
-
-<input type="text" ng-model="$ctrl.firstName">
-
-
-
-<div layout="row" layout-wrap >
-<div>
- Outside components
+Outside components
 <br>
 {{$ctrl.selectedData}}
 <br>
@@ -14,39 +7,21 @@
 <div layout="row" layout-wrap >
   <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.firstName" bind-data-key="firstName" type='text' label="{{$ctrl.label}}" specific-attr='$ctrl.specificAttr'>
   </custom-input-box>
- </div>
 
-  Auto Complete Outside
- {{$ctrl.autoCompleteData.label}}
- <br>
- <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.autoCompleteData.selectedAutocompleteData" bind-data-key="selectedAutocompleteData" type='{{$ctrl.autoCompleteData.type}}' label="{{$ctrl.autoCompleteData.label}}" specific-attr='$ctrl.autoCompleteData.specificAttr'>
- </custom-input-box>
 
-  <div flex="20" flex-offset="5">
-  Single Select Outside
-  {{$ctrl.singleSelectData.label}}
-  {{$ctrl.selectedsingleSelectedData}}
-
-  <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.selectedsingleSelectedData" bind-data-key="selectedsingleSelectedData" type='{{$ctrl.singleSelectData.type}}' label="{{$ctrl.singleSelectData.label}}" specific-attr='$ctrl.singleSelectData.specificAttr'>
   <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.checkinTime" bind-data-key="checkinTime" type='timePicker' label="{{$ctrl.datelabel}}">
   </custom-input-box>
-  </div>
 
-   <div flex="20" flex-offset="5">
-   MultiSelect Outside
-   {{$ctrl.multiSelectData.label}}
-   {{$ctrl.selectedmultiSelectedData}}
-   <br>
-   <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.selectedmultiSelectedData" bind-data-key="selectedmultiSelectedData" type='{{$ctrl.multiSelectData.type}}' label="{{$ctrl.multiSelectData.label}}" specific-attr='$ctrl.multiSelectData.specificAttr'>
   <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.checkinDate" bind-data-key="checkinDate" type='datePicker' label="{{$ctrl.datelabel}}">
-   </custom-input-box>
-   </div>
+  </custom-input-box>
 
   <!--
   <custom-input-box flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type1' label="$ctrl.label1" specific-attr='$ctrl.specificAttr'>
   </custom-input-box>
+
   <custom-input-box flex="20" flex-offset="5"  reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type2' label="$ctrl.label2" specific-attr='$ctrl.specificAttr'>
   </custom-input-box>
+
   <custom-input-box flex="20" flex-offset="5"  reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type2' label="$ctrl.label2" specific-attr='$ctrl.specificAttr'>
   </custom-input-box>
   <custom-input-box flex="20" flex-offset="5"  reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type2' label="$ctrl.label2" specific-attr='$ctrl.specificAttr'>

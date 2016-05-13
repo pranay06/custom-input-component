@@ -1,0 +1,7 @@
+<br>
+Inside Custom Input Box
+<br>
+{{CustomInputBoxCtrl.bindData}}
+{{CustomInputBoxCtrl.type}}
+<div ng-include="'./customInputBox/views/'+ CustomInputBoxCtrl.type +'/template.html'"></div>
+  
