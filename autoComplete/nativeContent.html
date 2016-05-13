@@ -20,6 +20,7 @@ Inside autocomplete native dsafasd
 	    md-no-cache="noCache"
 	    md-selected-item="$ctrl.bindData"
 	    md-search-text="$ctrl.searchText"
+			md-items="item in $ctrl.specificAttr.querySearch($ctrl.searchText)"
 	    md-item-text="item.display"
 	    md-floating-label="{{$ctrl.label}}"
 	    md-selected-item-change ="$ctrl.reflectValue($ctrl.bindData)">
