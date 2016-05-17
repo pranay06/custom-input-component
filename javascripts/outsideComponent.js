@@ -124,7 +124,7 @@ function OutsideComponentCtrl($scope) {
 
 
 
-  ctrl.autoCompleteData={
+  ctrl.autoCompleteInput={
 
       "required":true,
       "label": "states",
@@ -136,7 +136,7 @@ function OutsideComponentCtrl($scope) {
       }
   }
   ctrl.selectedAuto=null;
-  ctrl.autoCompleteData.selectedAutocompleteData=null;
+  ctrl.autoCompleteInput.selectedAutocompleteData=null;
         states = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
          Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
          Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
@@ -153,7 +153,7 @@ function OutsideComponentCtrl($scope) {
 
           }
           ctrl.states= loadAll();
-        ctrl.autoCompleteData.specificAttr.querySearch =  function  (query) {
+        ctrl.autoCompleteInput.specificAttr.querySearch =  function  (query) {
 
           var results = query ? ctrl.states.filter( createFilterFor(query) ) : [];
           return results;
