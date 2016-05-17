@@ -1,6 +1,6 @@
 customInputComponentApp.
   component('textBox',{
-    templateUrl: './text/nativeContent.html',
+    templateUrl: './subCustomComponents/text/nativeContent.html',
     controller: TextBoxCtrl,
     controllerAs: "TextBoxCtrl"
     ,
@@ -8,7 +8,10 @@ customInputComponentApp.
       label: '@',
       specificAttr: '<',
       bindData: '<',
-      reflectComponent: '&'
+      reflectComponent: '&',
+      required: '@',
+      ngHint: '@',
+      ngPattern: '@'
     }
   });
 

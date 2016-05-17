@@ -6,7 +6,8 @@ customInputComponentApp.
       specificAttr: '<',
       bindData: '<',
       bindDataKey:'@',
-      reflectCustomInput: '&'
+      reflectCustomInput: '&',
+      required: '@'
     },
     templateUrl: './customInputBox/customInputBox.html',
     controller: CustomInputBoxCtrl,
@@ -15,6 +16,12 @@ customInputComponentApp.
 
 function CustomInputBoxCtrl($scope) {
   var ctrl = this;
+
+  if(ctrl.specificAttr == undefined) {
+    ctrl.specificAttr = {};
+  }
+
+
   ctrl.a = 0;
   console.log("Inside CustomInputBoxCtrl");
   console.log($scope);

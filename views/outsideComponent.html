@@ -1,11 +1,73 @@
+<div layout="row" >
+  <div flex="50"  layout-align="center">
+    <h1 >Text Field</h1>
+  </div>
+  <div flex="50">
+    <custom-input-box reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.textInput.data" bind-data-key="textInput.data" type='text' label="{{$ctrl.textInput.label}}" specific-attr="$ctrl.textInput.specificAttr" required="true"></custom-input-box>
+  </div>
+</div>
 
-<input type="text" ng-model="$ctrl.firstName">
+<div layout="row" >
+  <div flex="50"  layout-align="center">
+    <h1 >Check Box</h1>
+  </div>
+  <div flex="50">
+    <custom-input-box type='checkBox' label="{{$ctrl.checkBoxInput.label}}" specific-attr='$ctrl.checkBoxInput.specificAttr' required="true"></custom-input-box>
+  </div>
+</div>
+
+
+<div layout="row" >
+  <div flex="50"  layout-align="center">
+    <h1>Single Select</h1>
+  </div>
+  <div flex="50">
+
+
+    <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.singleSelectInput.selectedData" bind-data-key="singleSelectInput.selectedData" type='singleSelect' label="{{$ctrl.singleSelectInput.label}}" specific-attr='$ctrl.singleSelectInput.specificAttr' required="true">
+    </custom-input-box>
+  </div>
+</div>
+
+
+<div layout="row" >
+  <div flex="50"  layout-align="center">
+    <h1>Multi Select</h1>
+  </div>
+  <div flex="50">
+
+
+    <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.multiSelectInput.data" bind-data-key="multiSelectInput.data" type='multiSelect' label="{{$ctrl.multiSelectInput.label}}" specific-attr='$ctrl.multiSelectInput.specificAttr' required="true">
+    </custom-input-box>
+  </div>
+</div>
 
 
 
-<div layout="row" layout-wrap >
-<div>
- Outside components
+<div layout="row" >
+  <div flex="50"  layout-align="center">
+    <h1></h1>
+  </div>
+  <div flex="50">
+
+
+    <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.multiSelectInput.data" bind-data-key="multiSelectInput.data" type='multiSelect' label="{{$ctrl.multiSelectInput.label}}" specific-attr='$ctrl.multiSelectInput.specificAttr' required="true">
+    </custom-input-box>
+  </div>
+</div>
+
+<!-- <div layout="row" >
+  <div flex="50"  layout-align="center">
+    <h1>{{$ctrl.sliderData.label}}</h1>
+  </div>
+  <div flex="50">
+    {{$ctrl.selectedSliderValue}}
+       <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.selectedSliderValue" bind-data-key="selectedSliderValue" type='slider' label="{{$ctrl.sliderData.label}}"
+       specific-attr='$ctrl.sliderData.specificAttr' >
+        </custom-input-box>
+  </div>
+</div> -->
+ <!-- Outside components
 <br>
 {{$ctrl.selectedData}}
 <br>
@@ -39,9 +101,17 @@
 
 
 
-   <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.selectedmultiSelectedData" bind-data-key="selectedmultiSelectedData" type='{{$ctrl.multiSelectData.type}}' label="{{$ctrl.multiSelectData.label}}" specific-attr='$ctrl.multiSelectData.specificAttr'>
-<custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.checkinDate" bind-data-key="checkinDate" type='datePicker' label="{{$ctrl.datelabel}}">
- </custom-input-box>
+   <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.selectedmultiSelectedData" bind-data-key="selectedmultiSelectedData" type='{{$ctrl.multiSelectData.type}}' label="{{$ctrl.multiSelectData.label}}" specific-attr='$ctrl.multiSelectData.specificAttr'></custom-input-box>
+  <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.checkinDate" bind-data-key="checkinDate" type='datePicker' label="{{$ctrl.datelabel}}">
+   </custom-input-box> -->
+
+<!-- {{$ctrl.selectedSliderValue}}
+   <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.selectedSliderValue" bind-data-key="selectedSliderValue" type='slider' label="{{$ctrl.sliderData.label}}"
+   specific-attr='$ctrl.sliderData.specificAttr' >
+    </custom-input-box> -->
+
+   <!-- Before CheckBox -->
+   <!-- <custom-input-box reflect-custom-input="$ctrl.reflectValue(keyString,value)" type='checkBox' label="{{$ctrl.checkBoxLabel}}" specific-attr='$ctrl.checkBoxData.specificAttr'></custom-input-box> -->
   <!--
   <custom-input-box flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectOutside(value)" bind-data="$ctrl.selectedData" type='$ctrl.type1' label="$ctrl.label1" specific-attr='$ctrl.specificAttr'>
   </custom-input-box>

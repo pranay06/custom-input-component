@@ -1,8 +1,8 @@
 customInputComponentApp.
-  component('timePickerBox',{
-    templateUrl: './timePicker/nativeContent.html',
-    controller: TimePickerBoxCtrl,
-    controllerAs: "TimePickerBoxCtrl"
+  component('datePickerBox',{
+    templateUrl: './subCustomComponents/datePicker/nativeContent.html',
+    controller: DatePickerBoxCtrl,
+    controllerAs: "DatePickerBoxCtrl"
     ,
     bindings: {
       label: '@',
@@ -12,10 +12,10 @@ customInputComponentApp.
     }
   });
 
-function TimePickerBoxCtrl($timeout, $scope)
+function DatePickerBoxCtrl($timeout, $scope)
 {
     var ctrl = this;
-    console.log("Inside controller of timePickerBoxCtrl");
+    console.log("Inside controller of datePickerBoxCtrl");
     console.log(this);
     this.reflectValue = function(value) {
       console.log(value);

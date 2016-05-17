@@ -1,7 +1,9 @@
 customInputComponentApp.
-  component('sliderBox',{
-    templateUrl: './slider/nativeContent.html',
-    controller: TextBoxCtrl,
+  component('timePickerBox',{
+    templateUrl: './subCustomComponents/timePicker/nativeContent.html',
+    controller: TimePickerBoxCtrl,
+    controllerAs: "TimePickerBoxCtrl"
+    ,
     bindings: {
       label: '@',
       specificAttr: '<',
@@ -10,14 +12,16 @@ customInputComponentApp.
     }
   });
 
-function TextBoxCtrl()
+function TimePickerBoxCtrl($timeout, $scope)
 {
     var ctrl = this;
-    console.log("Inside controller of textBoxCtrl");
+    console.log("Inside controller of timePickerBoxCtrl");
     console.log(this);
     this.reflectValue = function(value) {
       console.log(value);
       this.reflectComponent({value:value});
 
     };
+
+
 }

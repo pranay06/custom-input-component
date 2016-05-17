@@ -2,108 +2,125 @@ customInputComponentApp
   .component('outsideComponent',{
     templateUrl: "../views/outsideComponent.html",
     controller: OutsideComponentCtrl
-  });
+});
+
+
+var setObj = function(obj, keyString,value) {
+		console.log("Before Replace ", keyString)
+    keyString = keyString.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
+    console.log("After first replace", keyString);
+    keyString = keyString.replace(/^\./, '');           // strip a leading dot
+    console.log("After second replace", keyString);
+    var hierarchyWiseKeysArray = keyString.split('.');
+
+    while (hierarchyWiseKeysArray.length > 1)
+        obj = obj[hierarchyWiseKeysArray.shift()];
+    return obj[hierarchyWiseKeysArray.shift()] = value;
+
+}
 
 function OutsideComponentCtrl($scope) {
-  console.log('Outside Components');
+  // console.log('Outside Components');
   var ctrl = this;
-  ctrl.label = "First Name";
-  ctrl.type = "text";
-  ctrl.firstName = "Raj";
 
+  //Since One way binding has been followed in it,
+  //hence changes in the children elements will be reflected in the corresponding parents elements using this exposed function.
 
-  //
-  // ctrl.label1 = "Choose Date";
-  // ctrl.type1 = "date";
-  //
-  //  ctrl.label2 = "Choose time";
-  // ctrl.type2 = "time";
+  ctrl.reflectValue = function(keyString,value) {
+    console.log("Inside Reflect Value");
+    setObj(ctrl, keyString, value);
 
-  ctrl.specificAttr = {
-    "fellan":"dhamkaan"
   };
+
+
+  //Text input Data
+  ctrl.textInput = {};
+  ctrl.textInput.label = "Some Nice Label";
+  ctrl.textInput.data = "Some Nice Data";
+  ctrl.textInput.specificAttr = {
+    "ngPattern": "/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/",
+    "ngHint": "###-##-####",
+    "ngMessage": "###-##-#### - Please enter a valid SSN."
+  }
+
+  //checkBox input Data
+  ctrl.checkBoxInput = {};
+  ctrl.checkBoxInput.label = "Select your super hero";
+  ctrl.checkBoxInput.specificAttr = {
+    "domainList": ["Superman", "Batman", "Spiderman", "Ironman"]
+  };
+  ctrl.checkBoxInput.specificAttr.operateOnSelecteditems = function(currentSelectedItems) {
+    console.log("Inside operateOnSelecteditems");
+    console.log(currentSelectedItems);
+  }
+
+  //singleSelect input data
+  ctrl.singleSelectInput = {};
+  ctrl.singleSelectInput.label = "Best Food";
+  ctrl.singleSelectInput.selectedData;
+  ctrl.singleSelectInput.specificAttr = {
+    "listLabelKey":'label',
+    "listValueKey":'value',
+    "domainList": [
+             {"label":"Pizza","value":"pizza"},
+             {"label":"Burger","value":"burger"},
+             {"label":"Salad","value":"salad"}
+           ]
+           /*, "domainList":["pizza","burger","ice-cream"]*/
+          // The consuming component can take array as well as atomic objects as domainList
+
+  };
+
+  //multiSelect Input Data
+  ctrl.multiSelectInput = {
+                  "required": true,
+                  "label": "Food",
+                  "specificAttr":{
+                    "listLabelKey":'category',
+                    "listValueKey":'name',
+                   "domainList":["pizza","burger","ice-cream"]
+
+
+                    // "domainList": [
+                    //                 { category: 'meat', name: 'Pepperoni' },
+                    //                 { category: 'meat', name: 'Sausage' },
+                    //                 { category: 'meat', name: 'Ground Beef' },
+                    //                 { category: 'meat', name: 'Bacon' },
+                    //                 { category: 'veg', name: 'Mushrooms' },
+                    //                 { category: 'veg', name: 'Onion' },
+                    //                 { category: 'veg', name: 'Green Pepper' },
+                    //                 { category: 'veg', name: 'Green Olives' }
+                    //               ]
+
+                }
+              };
+
+  // ctrl.multiSelectInput.data;
+
+
+
+
 
   //DatePicker Model
 
   ctrl.datelabel = "Checkin Date";
-  
+//slider
+ctrl.selectedSliderValue=null;
+ctrl.sliderData={
+
+                      "required": true,
+                      "label": "Slider",
+                      "id": "slider",
+                      "type": "slider",
+                      "specificAttr":{
+                      "min":1,
+                      "max":10
+                    }
+
+}
+
 
   // ctrl.selectedData = "";
-  ctrl.reflectValue = function(keyString,value) {
-    ctrl[keyString] = value;
-    console.log(keyString);
-  };
-
-   ctrl.selectedsingleSelectedData=null,
-   ctrl.singleSelectData = {
-                    
-                    "required": true,
-                    "label": "Food",
-                    "id": "Food",
-                    "type": "singleSelect",
-                    "specificAttr":{
-                    "listLabelKey":'label',
-                    "listValueKey":'value',
-                   /* "domainList":["pizza","burger","ice-cream"]*/
-
-
-                      "domainList": [
-                               {"label":"Pizza","value":"pizza"},
-                               {"label":"Burger","value":"burger"},
-                                 {"label":"Salad","value":"salad"}
-                                    ]
-
-                     /* "domainList":[
-                                { category: 'meat', name: 'Pepperoni' },
-                                { category: 'meat', name: 'Sausage' },
-                                { category: 'meat', name: 'Ground Beef' },
-                                { category: 'meat', name: 'Bacon' },
-                                { category: 'veg', name: 'Mushrooms' },
-                                { category: 'veg', name: 'Onion' },
-                                { category: 'veg', name: 'Green Pepper' },
-                                { category: 'veg', name: 'Green Olives' }
-                              ]
-*/
-                     
-                      }
-
-                    }
-
-  ctrl.selectedmultiSelectedData=null,
-   ctrl.multiSelectData = {
-                    
-                    "required": true,
-                    "label": "Food",
-                    "id": "Food",
-                    "type": "multiSelect",
-                    "specificAttr":{
-                    "listLabelKey":'category',
-                    "listValueKey":'name',
-                  /* "domainList":["pizza","burger","ice-cream"]*/
-
-/*
-                      "domainList": [
-                               {"label":"Pizza","value":"pizza"},
-                               {"label":"Burger","value":"burger"},
-                                 {"label":"Salad","value":"salad"}
-                                    ]*/
-
-                      "domainList":[
-                                { category: 'meat', name: 'Pepperoni' },
-                                { category: 'meat', name: 'Sausage' },
-                                { category: 'meat', name: 'Ground Beef' },
-                                { category: 'meat', name: 'Bacon' },
-                                { category: 'veg', name: 'Mushrooms' },
-                                { category: 'veg', name: 'Onion' },
-                                { category: 'veg', name: 'Green Pepper' },
-                                { category: 'veg', name: 'Green Olives' }
-                              ]
-
-                     
-                      }
-
-                    }
-
 
 
 
@@ -170,5 +187,30 @@ function OutsideComponentCtrl($scope) {
     return a;
   }
 
+
+  //CheckBox
+
+  ctrl.selectedCheckBoxData = [];
+
+  ctrl.checkBoxLabel = "Check Box";
+
+  // function exists(item, selected) {
+  //   return list.indexOf(item) > -1;
+  // }
+  //
+  // var toggle = function (item, list) {
+  //       var idx = list.indexOf(item);
+  //       if (idx > -1) list.splice(idx, 1);
+  //       else list.push(item);
+  //     };
+  // ctrl.checkBoxData = {};
+  // ctrl.checkBoxData.specificAttr = {
+  //   "domainList": ["Pizza", "Burgers", "Sandwich"],
+  //
+  // }
+  // ctrl.checkBoxData.specificAttr.operateOnSelecteditems = function(currentSelectedItems) {
+  //   console.log("Inside operateOnSelecteditems");
+  //   console.log(currentSelectedItems);
+  // }
 
 }
