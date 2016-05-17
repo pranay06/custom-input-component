@@ -6,9 +6,10 @@ customInputComponentApp.
     ,
     bindings: {
       label: '@',
-      ngChecked: '&',
       domainList: '<',
-      required: '@'
+      required: '@',
+      bindData: '<',
+      reflectComponent: '&'
     }
   });
 
@@ -18,10 +19,12 @@ function CheckBoxBoxCtrl($scope) {
   console.log(ctrl);
   ctrl.selectedData = [];
 
-  ctrl.toggle = function(item){
+  this.reflectValue = function(value) {
+    console.log(value);
+
     console.log("Inside Toggle");
     var status = false;
-    var idx = ctrl.selectedData.indexOf(item);
+    var idx = ctrl.selectedData.indexOf(value);
     console.log("Index ", idx);
     if (idx > -1 )
     {
@@ -29,14 +32,38 @@ function CheckBoxBoxCtrl($scope) {
     }
     else {
       status = true;
-      ctrl.selectedData.push(item);
+      ctrl.selectedData.push(value);
     }
 
     console.log("Status ", status);
-    ctrl.ngChecked({currentSelectedItems: ctrl.selectedData});
+    // ctrl.ngChecked({currentSelectedItems: ctrl.selectedData});
 
-    return status;
+
+    this.reflectComponent({value:ctrl.selectedData});
+
+
   };
+
+
+  // ctrl.toggle = function(item){
+  //   console.log("Inside Toggle");
+  //   var status = false;
+  //   var idx = ctrl.selectedData.indexOf(item);
+  //   console.log("Index ", idx);
+  //   if (idx > -1 )
+  //   {
+  //     ctrl.selectedData.splice(idx,1);
+  //   }
+  //   else {
+  //     status = true;
+  //     ctrl.selectedData.push(item);
+  //   }
+  //
+  //   console.log("Status ", status);
+  //   // ctrl.ngChecked({currentSelectedItems: ctrl.selectedData});
+  //
+  //   return status;
+  // };
 
   console.log("Inside CheckBoxBoxCtrl");
   console.log(CheckBoxBoxCtrl.domainList);

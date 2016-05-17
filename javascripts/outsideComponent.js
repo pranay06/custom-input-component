@@ -104,28 +104,28 @@ function OutsideComponentCtrl($scope) {
   //DatePicker Model
 
   ctrl.datelabel = "Checkin Date";
-//slider
-ctrl.selectedSliderValue=null;
-ctrl.sliderData={
+  //slider
+  ctrl.selectedSliderValue=null;
+  ctrl.sliderData={
 
-                      "required": true,
-                      "label": "Slider",
-                      "id": "slider",
-                      "type": "slider",
-                      "specificAttr":{
-                      "min":1,
-                      "max":10
-                    }
+                        "required": true,
+                        "label": "Slider",
+                        "id": "slider",
+                        "type": "slider",
+                        "specificAttr":{
+                        "min":1,
+                        "max":10
+                      }
 
-}
+  }
 
 
-  // ctrl.selectedData = "";
+    // ctrl.selectedData = "";
 
 
 
   ctrl.autoCompleteData={
-      "selectedAutocompleteData":null,
+
       "required":true,
       "label": "states",
       "type":"autoComplete",
@@ -135,57 +135,58 @@ ctrl.sliderData={
 
       }
   }
+  ctrl.selectedAuto=null;
+  ctrl.autoCompleteData.selectedAutocompleteData=null;
+        states = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
+         Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
+         Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
+         Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
+         North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
+         South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
+         Wisconsin, Wyoming';
+        function createFilterFor(query) {
+            var lowercaseQuery = angular.lowercase(query);
 
-      states = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
-       Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
-       Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
-       Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
-       North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
-       South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
-       Wisconsin, Wyoming';
-      function createFilterFor(query) {
-          var lowercaseQuery = angular.lowercase(query);
+            return function filterFn(state) {
+              return (state.value.indexOf(lowercaseQuery) === 0);
+            };
 
-          return function filterFn(state) {
-            return (state.value.indexOf(lowercaseQuery) === 0);
-          };
+          }
+          ctrl.states= loadAll();
+        ctrl.autoCompleteData.specificAttr.querySearch =  function  (query) {
 
+          var results = query ? ctrl.states.filter( createFilterFor(query) ) : [];
+          return results;
         }
-        ctrl.states= loadAll();
-      ctrl.autoCompleteData.specificAttr.querySearch =  function  (query) {
 
-        var results = query ? ctrl.states.filter( createFilterFor(query) ) : [];
-        return results;
-      }
+    /**
+     * Build `states` list of key/value pairs
+     */
+    function loadAll() {
+      console.log("inside loadAll")
+      //
+      // $http.get("autoComplete/states.json").success(function(response, error){
+      //   console.log("inside http get");
+      //   console.log(response);
+      //   allStates = response;
+      //   console.log(error);
+      // });
+      // console.log(ctrl.specificAttr.domainList)
+      // var allStates =ctrl.specificAttr.domainList;
+    //   console.log(allStates);
+     //
+     a=states.split(/, +/g).map( function (state) {
+        return {
+          value: state.toLowerCase(),
+          display: state
+        };
+      });
 
-  /**
-   * Build `states` list of key/value pairs
-   */
-  function loadAll() {
-    console.log("inside loadAll")
-    //
-    // $http.get("autoComplete/states.json").success(function(response, error){
-    //   console.log("inside http get");
-    //   console.log(response);
-    //   allStates = response;
-    //   console.log(error);
-    // });
-    // console.log(ctrl.specificAttr.domainList)
-    // var allStates =ctrl.specificAttr.domainList;
-  //   console.log(allStates);
-   //
-   a=states.split(/, +/g).map( function (state) {
-      return {
-        value: state.toLowerCase(),
-        display: state
-      };
-    });
+     console.log("a is");
+     console.log(a);
 
-   console.log("a is");
-   console.log(a);
-
-    return a;
-  }
+      return a;
+    }
 
 
   //CheckBox

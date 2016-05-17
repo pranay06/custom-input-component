@@ -1,7 +1,8 @@
 customInputComponentApp.
   component('autocompleteBox',{
-    templateUrl: './autoComplete/nativeContent.html',
-    controller:autocompleteBox,
+    templateUrl: './subCustomComponents/autoComplete/nativeContent.html',
+    controller:autocompleteBoxCtrl,
+    controllerAs:"autocompleteBoxCtrl",
     bindings: {
       label: '@',
       specificAttr: '<',
@@ -10,28 +11,28 @@ customInputComponentApp.
     }
   });
 
-function autocompleteBox($http)
+function autocompleteBoxCtrl($http)
 {
-    var ctrl = this;
+    var autocompleteBoxCtrl = this;
     console.log("Inside controller of autoCompleteBoxCtrl");
     console.log("specific attributes are");
-    console.log(ctrl.specificAttr);
+    console.log(autocompleteBoxCtrl.specificAttr);
     console.log(this);
-    this.reflectValue = function(value) {
+    autocompleteBoxCtrl.reflectValue = function(value) {
       console.log(value);
-      this.reflectComponent({value:value});
+      autocompleteBoxCtrl.reflectComponent({value:value});
 
     };
 
-    // ctrl.states= loadAll($http);
-    ctrl.selectedItem;
-    ctrl.searchText;
-    // ctrl.querySearch= querySearch;
+    // autocompleteBoxCtrl.states= loadAll($http);
+    autocompleteBoxCtrl.selectedItem;
+    autocompleteBoxCtrl.searchText;
+    // autocompleteBoxCtrl.querySearch= querySearch;
 
 
 
     console.log("states is ..............");
-    // console.log(ctrl.states);
+    // console.log(autocompleteBoxCtrl.states);
 
     // ******************************
     // Internal methods

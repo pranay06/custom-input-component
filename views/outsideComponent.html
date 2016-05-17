@@ -12,7 +12,7 @@
     <h1 >Check Box</h1>
   </div>
   <div flex="50">
-    <custom-input-box type='checkBox' label="{{$ctrl.checkBoxInput.label}}" specific-attr='$ctrl.checkBoxInput.specificAttr' required="true"></custom-input-box>
+    <custom-input-box bind-data="$ctrl.checkBoxInput.data" type='checkBox' label="{{$ctrl.checkBoxInput.label}}" bind-data-key="checkBoxInput.data" specific-attr='$ctrl.checkBoxInput.specificAttr' required="true"></custom-input-box>
   </div>
 </div>
 
@@ -35,8 +35,6 @@
     <h1>Multi Select</h1>
   </div>
   <div flex="50">
-
-
     <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.multiSelectInput.data" bind-data-key="multiSelectInput.data" type='multiSelect' label="{{$ctrl.multiSelectInput.label}}" specific-attr='$ctrl.multiSelectInput.specificAttr' required="true">
     </custom-input-box>
   </div>
@@ -44,7 +42,7 @@
 
 
 
-<div layout="row" >
+<!-- <div layout="row" >
   <div flex="50"  layout-align="center">
     <h1></h1>
   </div>
@@ -52,6 +50,17 @@
 
 
     <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.multiSelectInput.data" bind-data-key="multiSelectInput.data" type='multiSelect' label="{{$ctrl.multiSelectInput.label}}" specific-attr='$ctrl.multiSelectInput.specificAttr' required="true">
+    </custom-input-box>
+  </div>
+</div> -->
+
+<div layout="row" >
+  <div flex="50"  layout-align="center">
+    <h1>Auto Complete</h1>
+  </div>
+  <div flex="50">
+  selected value is::{{ctrl.autoCompleteData.selectedAutocompleteData}}
+    <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.autoCompleteData.selectedAutocompleteData" bind-data-key="autoCompleteData.selectedAutocompleteData" type='{{$ctrl.autoCompleteData.type}}' label="{{$ctrl.autoCompleteData.label}}" specific-attr='$ctrl.autoCompleteData.specificAttr'>
     </custom-input-box>
   </div>
 </div>
