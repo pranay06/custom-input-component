@@ -20,7 +20,7 @@ var setObj = function(obj, keyString,value) {
 }
 
 function OutsideComponentCtrl($scope) {
-  // console.log('Outside Components');
+  console.log('Outside Components');
   var ctrl = this;
 
   //Since One way binding has been followed in it,
@@ -28,6 +28,8 @@ function OutsideComponentCtrl($scope) {
 
   ctrl.reflectValue = function(keyString,value) {
     console.log("Inside Reflect Value");
+    console.log(keyString);
+    console.log(value);
     setObj(ctrl, keyString, value);
 
   };
