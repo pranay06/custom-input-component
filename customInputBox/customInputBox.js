@@ -7,7 +7,8 @@ customInputComponentApp.
       bindData: '<',
       bindDataKey:'@',
       reflectCustomInput: '&',
-      required: '@'
+      required: '@',
+      id: '@'
     },
     templateUrl: './customInputBox/customInputBox.html',
     controller: CustomInputBoxCtrl,
@@ -32,7 +33,7 @@ function CustomInputBoxCtrl($scope) {
   ctrl.reflectCustomBox = function(newValue) {
     console.log("In reflect Custom Box");
     console.log(newValue);
-    ctrl.reflectCustomInput({'keyString':ctrl.bindDataKey,'value':newValue});
+    ctrl.reflectCustomInput({'keyString':ctrl.bindDataKey,'value':newValue, 'id':ctrl.id});
     console.log(ctrl.bindDataKey);
   }
 }

@@ -3,7 +3,7 @@
     <h1 >Text Field</h1>
   </div>
   <div flex="50">
-    <custom-input-box reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.textInput.data" bind-data-key="textInput.data" type='text' label="{{$ctrl.textInput.label}}" specific-attr="$ctrl.textInput.specificAttr" required="true"></custom-input-box>
+    <custom-input-box id="textInput" reflect-custom-input="$ctrl.reflectValue(keyString,value, id)" bind-data="$ctrl.textInput.data" bind-data-key="textInput.data" type='text' label="{{$ctrl.textInput.label}}" specific-attr="$ctrl.textInput.specificAttr" required="true"></custom-input-box>
   </div>
 </div>
 
@@ -12,7 +12,7 @@
     <h1 >Check Box</h1>
   </div>
   <div flex="50">
-    <custom-input-box reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.checkBoxInput.data" type='checkBox' label="{{$ctrl.checkBoxInput.label}}" bind-data-key="checkBoxInput.data" specific-attr='$ctrl.checkBoxInput.specificAttr' required="true"></custom-input-box>
+    <custom-input-box id="checkBoxInput" reflect-custom-input="$ctrl.reflectValue(keyString,value, id)" bind-data="$ctrl.checkBoxInput.data" type='checkBox' label="{{$ctrl.checkBoxInput.label}}" bind-data-key="checkBoxInput.data" specific-attr='$ctrl.checkBoxInput.specificAttr' required="true"></custom-input-box>
   </div>
 </div>
 
@@ -24,7 +24,8 @@
   <div flex="50">
 
 
-    <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.singleSelectInput.selectedData" bind-data-key="singleSelectInput.selectedData" type='singleSelect' label="{{$ctrl.singleSelectInput.label}}" specific-attr='$ctrl.singleSelectInput.specificAttr' required="true">
+    <custom-input-box  flex="20" flex-offset="5"
+    id="singleSelect" reflect-custom-input="$ctrl.reflectValue(keyString,value, id)" bind-data="$ctrl.singleSelectInput.selectedData" bind-data-key="singleSelectInput.selectedData" type='singleSelect' label="{{$ctrl.singleSelectInput.label}}" specific-attr='$ctrl.singleSelectInput.specificAttr' required="true">
     </custom-input-box>
   </div>
 </div>
@@ -35,7 +36,7 @@
     <h1>Multi Select</h1>
   </div>
   <div flex="50">
-    <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.multiSelectInput.data" bind-data-key="multiSelectInput.data" type='multiSelect' label="{{$ctrl.multiSelectInput.label}}" specific-attr='$ctrl.multiSelectInput.specificAttr' required="true">
+    <custom-input-box  flex="20" flex-offset="5" id="Multi Select" reflect-custom-input="$ctrl.reflectValue(keyString,value, id)" bind-data="$ctrl.multiSelectInput.data" bind-data-key="multiSelectInput.data" type='multiSelect' label="{{$ctrl.multiSelectInput.label}}" specific-attr='$ctrl.multiSelectInput.specificAttr' required="true">
     </custom-input-box>
   </div>
 </div>
@@ -60,7 +61,7 @@
   </div>
   <div flex="50">
   selected value is::{{ctrl.autoCompleteInput.selectedAutocompleteData}}
-    <custom-input-box  flex="20" flex-offset="5" reflect-custom-input="$ctrl.reflectValue(keyString,value)" bind-data="$ctrl.autoCompleteInput.selectedAutocompleteData" bind-data-key="autoCompleteInput.selectedAutocompleteData" type='{{$ctrl.autoCompleteInput.type}}' label="{{$ctrl.autoCompleteInput.label}}" specific-attr='$ctrl.autoCompleteInput.specificAttr'>
+    <custom-input-box  flex="20" flex-offset="5" id="autoComplete" reflect-custom-input="$ctrl.reflectValue(keyString,value, id)" bind-data="$ctrl.autoCompleteInput.selectedAutocompleteData" bind-data-key="autoCompleteInput.selectedAutocompleteData" type='{{$ctrl.autoCompleteInput.type}}' label="{{$ctrl.autoCompleteInput.label}}" specific-attr='$ctrl.autoCompleteInput.specificAttr'>
     </custom-input-box>
   </div>
 </div>

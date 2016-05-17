@@ -26,10 +26,11 @@ function OutsideComponentCtrl($scope) {
   //Since One way binding has been followed in it,
   //hence changes in the children elements will be reflected in the corresponding parents elements using this exposed function.
 
-  ctrl.reflectValue = function(keyString,value) {
+  ctrl.reflectValue = function(keyString,value, id) {
     console.log("Inside Reflect Value");
     console.log(keyString);
     console.log(value);
+    console.log(id);
     setObj(ctrl, keyString, value);
 
   };
