@@ -31,13 +31,28 @@ function multiSelectBoxCtrl($http)
       console.log(multiSelectBoxCtrl.uniq);
   }
 
-  multiSelectBoxCtrl.categoryMatch = function(item) {
-    // console.log(multiSelectBoxCtrl.uniqM);
-    console.log("Inside Catoegory Match");
-    console.log(item);
-    console.log(multiSelectBoxCtrl.uniqM);
-    return (item[multiSelectBoxCtrl.specificAttr.listLabelKey] === multiSelectBoxCtrl.uniqM);
-  }
+  multiSelectBoxCtrl.getCategoryMatch = function(uniq) {
+    return function(item) {
+        // console.log(multiSelectBoxCtrl.uniqM);
+        console.log("Inside Catoegory Match");
+        console.log(item);
+        console.log(multiSelectBoxCtrl.uniqM);
+        // console.log(multiSelectBoxCtrl.specificAttr.listLabelKey);
+        // var obj={multiSelectBoxCtrl.specificAttr.listLabelKey:uniq};
+        // console.log("obj is ____________________________");
+        // console.log(obj);
+        // //return(obj)
+        // var key=multiSelectBoxCtrl.specificAttr.listLabelKey;
+        // console.log(key);
+        // var obj={
+        //
+        // }
+        console.log(uniq)
+       return (item[multiSelectBoxCtrl.specificAttr.listLabelKey] === uniq);
+      }
+  };
+
+  //multiSelectBoxCtrl.categoryMatch =
   //
   // multiSelectBoxCtrl.categoryMatch = {};
   // multiSelectBoxCtrl.categoryMatch[multiSelectBoxCtrl.specificAttr.listLabelKey] =  multiSelectBoxCtrl.uniq

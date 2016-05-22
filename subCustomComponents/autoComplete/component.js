@@ -19,6 +19,7 @@ function autocompleteBoxCtrl($http)
     console.log(autocompleteBoxCtrl.specificAttr);
     console.log(this);
     autocompleteBoxCtrl.reflectValue = function(value) {
+      console.log("reflect value in autocomplete");
       console.log(value);
       autocompleteBoxCtrl.reflectComponent({value:value});
 
@@ -28,8 +29,16 @@ function autocompleteBoxCtrl($http)
     autocompleteBoxCtrl.selectedItem;
     autocompleteBoxCtrl.searchText;
     // autocompleteBoxCtrl.querySearch= querySearch;
+    autocompleteBoxCtrl.queryData=null;
+    // autocompleteBoxCtrl.filteredData(filteredData)
+    // {
+    //   autocompleteBoxCtrl.queryData=filteredData;
+    // }
 
-
+           autocompleteBoxCtrl.callBack=function(results)
+           {
+             autocompleteBoxCtrl.queryData=results;
+           }
 
     console.log("states is ..............");
     // console.log(autocompleteBoxCtrl.states);
@@ -46,5 +55,6 @@ function autocompleteBoxCtrl($http)
     /**
      * Create filter function for a query string
      */
+
 
 }
