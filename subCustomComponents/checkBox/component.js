@@ -18,7 +18,12 @@ function CheckBoxBoxCtrl($scope) {
   console.log("Inside CheckBoxBoxCtrl");
   console.log(ctrl);
   ctrl.selectedData = [];
-
+  if(ctrl.domainList.constructor === Object)
+    ctrl.listType = "object";
+  else
+    if (ctrl.domainList.constructor === Array) {
+      ctrl.listType = "array";
+    }
   this.reflectValue = function(value) {
     console.log(value);
 

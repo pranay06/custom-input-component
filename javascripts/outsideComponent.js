@@ -50,7 +50,12 @@ function OutsideComponentCtrl($scope,$http,$timeout, $q) {
   ctrl.checkBoxInput = {};
   ctrl.checkBoxInput.label = "Select your super hero";
   ctrl.checkBoxInput.specificAttr = {
-    "domainList": ["Superman", "Batman", "Spiderman", "Ironman"]
+    // "domainList": ["Superman", "Batman", "Spiderman", "Ironman"]
+    "domainList": {
+      "superman":"superman",
+      "batman":"Batman",
+      "niceman": "Niceman"
+    }
   };
   ctrl.checkBoxInput.specificAttr.operateOnSelecteditems = function(currentSelectedItems) {
     console.log("Inside operateOnSelecteditems");
@@ -60,15 +65,21 @@ function OutsideComponentCtrl($scope,$http,$timeout, $q) {
   //singleSelect input data
   ctrl.singleSelectInput = {};
   ctrl.singleSelectInput.label = "Best Food";
-  ctrl.singleSelectInput.selectedData;
+  ctrl.singleSelectInput.selectedData = "pizza";
   ctrl.singleSelectInput.specificAttr = {
     "listLabelKey":'label',
     "listValueKey":'value',
-    "domainList": [
-      {"label":"Pizza","value":"pizza"},
-      {"label":"Burger","value":"burger"},
-      {"label":"Salad","value":"salad"}
-    ]
+    // "domainList": [
+    //   {"label":"Pizza","value":"pizza"},
+    //   {"label":"Burger","value":"burger"},
+    //   {"label":"Salad","value":"salad"}
+    // ]
+    "domainList": {
+      "pizza": "Pizza",
+      "burger": "Burger",
+      "salad": "Salad"
+    }
+    //  "domainList":[{"pizza":"Pizza"},{"burger":"Burger"}, {"salad":"Salad"}]
     /*, "domainList":["pizza","burger","ice-cream"]*/
     // The consuming component can take array as well as atomic objects as domainList
 
